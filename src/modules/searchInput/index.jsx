@@ -20,7 +20,11 @@ const SearchInput = () => {
   const handleClick = () => {
     if (search !== '') {
       setIsLoading(true)
-      Router.push('/items', `/items?search=${search}`)
+      Router.push({
+        pathname: '/items',
+        as: '/items',
+        query: { search }
+      })
       return
     }
     setError(!error)
