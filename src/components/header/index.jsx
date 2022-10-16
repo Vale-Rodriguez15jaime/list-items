@@ -1,15 +1,18 @@
+import Router from 'next/router'
+import { Box } from '@mui/material'
+
 import Logo from 'assets/logo'
 import useStyles from './styles'
 
 const Header = ({ currentPosition }) => {
   const classes = useStyles()
   return (
-    <div>
-      <div className={classes.wrapper}>
+    <Box className={classes.wrapper}>
+      <Box className={classes.logo} onClick={() => Router.push('/')}>
         <Logo />
-        <div className={classes.title}>{currentPosition}</div>
-      </div>
-    </div>
+      </Box>
+      <div className={classes.title}>{currentPosition}</div>
+    </Box>
   )
 }
 
