@@ -8,6 +8,11 @@ const ListItems = () => {
   const classes = useStyles()
   const router = useRouter()
   console.log('router', router.query)
+
+  const handleClickLearnMore = id => {
+    router.push('/items/[id]', `/items/${id}`)
+  }
+
   return (
     <Grid
       className={classes.listContainer}
@@ -18,7 +23,7 @@ const ListItems = () => {
       {[...Array(20).keys()].map(item => {
         return (
           <Grid key={item} item>
-            <CardItem />
+            <CardItem onClick={() => handleClickLearnMore(item)} />
           </Grid>
         )
       })}
