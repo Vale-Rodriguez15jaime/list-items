@@ -7,7 +7,7 @@ import {
   Card
 } from '@mui/material'
 
-const CardItem = () => {
+const CardItem = ({ onClick }) => {
   return (
     <Card sx={{ maxWidth: 345 }}>
       <CardMedia
@@ -26,10 +26,16 @@ const CardItem = () => {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small">Learn More</Button>
+        <Button onClick={onClick && onClick} size="small">
+          Learn More
+        </Button>
       </CardActions>
     </Card>
   )
+}
+
+CardItem.defaultProps = {
+  onClick: null
 }
 
 export default CardItem
