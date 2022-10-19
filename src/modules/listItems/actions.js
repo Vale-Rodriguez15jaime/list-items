@@ -1,7 +1,7 @@
 import { actionType } from './types'
 import axios from 'axios'
 
-export const baseUrl = 'http://localhost:3300/api/v1/items'
+export const baseUrl = 'ec2-54-146-207-213.compute-1.amazonaws.com/api/v1/items'
 
 export const getList = async (params, dispatch) => {
   try {
