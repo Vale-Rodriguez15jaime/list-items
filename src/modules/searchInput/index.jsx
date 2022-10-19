@@ -35,6 +35,9 @@ const SearchInput = () => {
         Do your search
       </Typography>
       <Input
+        aria-label="inputSearch"
+        name="inputSearch"
+        data-testid="inputSearch"
         disabled={isLoading}
         error={error}
         onChange={handleChange}
@@ -43,7 +46,12 @@ const SearchInput = () => {
         variant="outlined"
         type="search"
       />
-      <LoadingButton loading={isLoading} onClick={handleClick} variant="contained">
+      <LoadingButton
+        data-testid="submitSearch"
+        loading={isLoading}
+        onClick={handleClick}
+        variant="contained"
+      >
         Search
       </LoadingButton>
     </Box>

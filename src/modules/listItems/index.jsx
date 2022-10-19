@@ -2,7 +2,7 @@ import { useReducer, useEffect } from 'react'
 import { useRouter } from 'next/router'
 import { Grid, CircularProgress, Box, Typography } from '@mui/material'
 
-import CardItem from 'components/cardItem'
+import CardItem from '../../components/cardItem'
 import useStyles from './styles'
 import { initialState, reducer } from './reducer'
 import { getList } from './actions'
@@ -25,7 +25,7 @@ const ListItems = () => {
   }
 
   return (
-    <>
+    <div data-testid={`listSearch-${search}`}>
       {isLoading && (
         <Box sx={{ display: 'flex', justifyContent: 'center', marginTop: '4rem' }}>
           <CircularProgress />
@@ -48,7 +48,7 @@ const ListItems = () => {
         </Grid>
       )}
       {!isLoading && data.length === 0 && <Typography>Empty list</Typography>}
-    </>
+    </div>
   )
 }
 
