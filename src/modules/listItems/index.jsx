@@ -27,7 +27,7 @@ const ListItems = () => {
   return (
     <>
       {isLoading && (
-        <Box sx={{ display: 'flex' }}>
+        <Box sx={{ display: 'flex', justifyContent: 'center', marginTop: '4rem' }}>
           <CircularProgress />
         </Box>
       )}
@@ -41,7 +41,7 @@ const ListItems = () => {
           {data.map(item => {
             return (
               <Grid key={item.id} item>
-                <CardItem onClick={() => handleClickLearnMore(item.id)} />
+                <CardItem item={item} onClick={() => handleClickLearnMore(item.id)} />
               </Grid>
             )
           })}
