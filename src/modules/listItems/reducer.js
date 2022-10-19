@@ -18,7 +18,7 @@ export function reducer(state, action) {
       return {
         ...state,
         isLoading: false,
-        ...action.payload
+        ...action.payload.data
       }
     }
     case actionType.GET_LIST_ERROR: {
