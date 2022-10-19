@@ -7,11 +7,11 @@ const useStyles = makeStyles(() => ({
   },
   imageContainer: {
     width: '100%',
-    height: '20rem',
+    height: '40rem',
     marginBottom: '2rem'
   },
   image: {
-    objectFit: 'cover',
+    objectFit: 'contain',
     width: '100%',
     height: '100%'
   }
